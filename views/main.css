@@ -3,19 +3,22 @@
 @import url(https://fonts.googleapis.com/css?family=Monofett);
 
 .header {
-  background-image: url('../css/lifts.jpg');
+  margin-top: -2em;
+  background-image: url('../css/skier.jpg');
   background-size: cover;
+  height: 300px;
 }
 
 .logo {
   color: blue;
   font-family: Monofett;
-  font-size: 90px;
+  font-size: 60px;
   text-align: center;
+  padding: 1em;
 }
 
 form {
-margin: 0% 0% 0% 40%;
+margin: 0% 0% 30% 30%;
 display: inline-block;
 }
 
@@ -24,7 +27,14 @@ display: inline-block;
   width: 170px;
   border-radius: 3px;
   border-style: none;
+}
 
+.button {
+  width: 170px;
+  text-decoration: none;
+  background-color: transparent;
+  text-align: center;
+  margin-top: 5px;
 }
 
 .tagline {
@@ -36,27 +46,11 @@ display: inline-block;
 
 .desc-text {
   font-family: Roboto Condensed;
-  margin: 10px 100px;
+  /*margin: 10px 100px;*/
 }
 
 footer {
   background-color: darkblue;
 }
 
-/*#background {
-    position: absolute;
-    top: -190px;
-    left: 100vh;
-    min-width: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    background: url(polina.jpg) no-repeat;
-    background-size: cover;
-}*/
-.container h1 {
-    color: white;
-}
 
