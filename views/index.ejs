@@ -1,14 +1,15 @@
 <% include partials/header.ejs %>
 <header class= "header">
-  <video autoplay loop muted poster="" id="background">
+  <!-- <video autoplay loop muted poster="" id="background">
     <source src="../css/Snow_Falling.mp4" type="video/mp4">
-  </video>
+  </video> -->
   <h1 class="logo">powSTASH</h1>
-</header>
-<form method="GET" action="/weather">
-  <input class="input" type="text" placeholder="Mountain" name="q">
+  <form method="GET" action="/weather">
+  <input class="input" type="text" placeholder="Mountain ex. Mount Baker,Wa" name="q">
   <button type = "submit">Submit</button>
 </form>
+</header>
+
 <h2 class= "tagline">Search, Compare, Ride</h2>
-<p>Irony lomo butcher single-origin coffee 90's authentic shabby chic biodiesel, ugh disrupt cold-pressed aesthetic vice pour-over art party. Knausgaard raw denim vegan gluten-free, stumptown organic thundercats tumblr franzen ugh readymade whatever. Drinking vinegar kickstarter knausgaard tousled, bushwick banh mi keytar echo park heirloom salvia gluten-free. Gochujang selvage blog, pork belly ethical wolf pabst letterpress migas. </p>
+<p class="desc-text">Irony lomo butcher single-origin coffee 90's authentic shabby chic biodiesel, ugh disrupt cold-pressed aesthetic vice pour-over art party. Knausgaard raw denim vegan gluten-free, stumptown organic thundercats tumblr franzen ugh readymade whatever. Drinking vinegar kickstarter knausgaard tousled, bushwick banh mi keytar echo park heirloom salvia gluten-free. Gochujang selvage blog, pork belly ethical wolf pabst letterpress migas. </p>
 <% include partials/footer.ejs %>

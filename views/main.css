@@ -3,7 +3,8 @@
 @import url(https://fonts.googleapis.com/css?family=Monofett);
 
 .header {
-  background-image: grey;
+  background-image: url('../css/lifts.jpg');
+  background-size: cover;
 }
 
 .logo {
@@ -13,11 +14,17 @@
   text-align: center;
 }
 
+form {
+margin: 0% 0% 0% 40%;
+display: inline-block;
+}
+
 .input {
   height: 35px;
   width: 170px;
   border-radius: 3px;
   border-style: none;
+
 }
 
 .tagline {
@@ -27,16 +34,20 @@
   font-size: 50px;
 }
 
+.desc-text {
+  font-family: Roboto Condensed;
+  margin: 10px 100px;
+}
+
 footer {
   background-color: darkblue;
 }
 
-#background {
-    position: fixed;
-    top: -35%;
-    left: 50%;
-    /*min-width: 100%;
-    min-height: 100%;*/
+/*#background {
+    position: absolute;
+    top: -190px;
+    left: 100vh;
+    min-width: 100%;
     width: auto;
     height: auto;
     z-index: -100;
@@ -44,7 +55,7 @@ footer {
     transform: translateX(-50%) translateY(-50%);
     background: url(polina.jpg) no-repeat;
     background-size: cover;
-}
+}*/
 .container h1 {
     color: white;
 }
