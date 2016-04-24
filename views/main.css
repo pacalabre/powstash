@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Megrim);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+@import url(https://fonts.googleapis.com/css?family=Monofett);
+
+.header {
+  background-image: grey;
+}
+
+.logo {
+  color: blue;
+  font-family: Monofett;
+  font-size: 90px;
+  text-align: center;
+}
+
+.input {
+  height: 35px;
+  width: 170px;
+  border-radius: 3px;
+  border-style: none;
+}
+
+.tagline {
+  text-align: center;
+  margin-top: 2em;
+  font-family: Roboto Condensed;
+  font-size: 50px;
+}
+
+footer {
+  background-color: darkblue;
+}
+
+#background {
+    position: fixed;
+    top: -35%;
+    left: 50%;
+    /*min-width: 100%;
+    min-height: 100%;*/
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover;
+}
+.container h1 {
+    color: white;
+}
+

@@ -1,0 +1,16 @@
+{
+  "name": "powStash",
+  "version": "1.0.0",
+  "description": "A web app for skiers and snowboarders to compare the conditions of their local resorts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paul Calabrese",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-ejs-layouts": "^2.1.0",
+    "request": "^2.72.0"
+  }
+}
