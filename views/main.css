@@ -117,6 +117,16 @@ display: inline-block;
   font-size: 25px;
 }
 
+/*** My Resorts ***/
+
+.my-resorts-header {
+  background-attachment: fixed;
+  margin-top: -1.2em;
+  background-image: url('../css/resort.jpg');
+  background-size: cover;
+  height: 300px;
+}
+
 /* Reusable */
 .desc-text {
   font-family: Roboto Condensed;
