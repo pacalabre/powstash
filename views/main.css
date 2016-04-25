@@ -6,7 +6,9 @@
 @import url(https://fonts.googleapis.com/css?family=Londrina+Shadow);
 @import url(https://fonts.googleapis.com/css?family=Montserrat+Subrayada);
 
-
+.container-fluid {
+  padding: 0px 0px;
+}
 
 .header {
   margin-top: -1.2em;
@@ -16,10 +18,13 @@
 }
 
 .logo {
-  color: blue;
+  color: white;
   font-family: bangers ;
   font-size: 60px;
   text-align: center;
+  background-color: darkblue;
+  margin: 0px;
+  padding: 0px 0px;
 }
 
 .stash {
@@ -46,6 +51,7 @@ display: inline-block;
 }
 
 .button {
+  border-radius: 3px;
   width: 170px;
   height: 35px;
   text-decoration: none;
@@ -65,11 +71,12 @@ display: inline-block;
 
 .desc-text {
   font-family: Roboto Condensed;
-  /*margin: 10px 100px;*/
+  /*margin: 10px;*/
 }
 
 footer {
-  background-color: darkblue;
+
+  height:100px;
 }
 
 
