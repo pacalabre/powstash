@@ -10,12 +10,27 @@
   padding: 0px 0px;
 }
 
+/*** Nav ***/
+
+.nav-logo {
+  color: blue;
+  font-family: bangers;
+  font-size: 30px;
+}
+
+/*** Main Page ***/
+
+/* Main Page Header */
+
 .header {
+  background-attachment: fixed;
   margin-top: -1.2em;
   background-image: url('../css/skier.jpg');
   background-size: cover;
   height: 300px;
 }
+
+/* Main Page Logo */
 
 .logo {
   color: white;
@@ -30,12 +45,6 @@
 .stash {
   font-family: Londrina Shadow;
   padding:2px;
-}
-
-.nav-logo {
-  color: blue;
-  font-family: bangers;
-  font-size: 30px;
 }
 
 .main-search {
@@ -69,6 +78,29 @@ display: inline-block;
   font-size: 30px;
 }
 
+/*** Mtn Conditions Page ***/
+
+.mtn-name {
+  font-size: 50px;
+  text-align: center;
+  margin: 10% 0px 0px 0px;
+}
+
+.mtn-location {
+  text-align: center;
+  margin: -2px 0px 10px 0px;
+}
+
+.google-stats {
+  text-align: center;
+}
+
+.conditions {
+  margin: 25px 0px 0px 10%;
+  font-size: 25px;
+}
+
+/* Reusable */
 .desc-text {
   font-family: Roboto Condensed;
   /*margin: 10px;*/
