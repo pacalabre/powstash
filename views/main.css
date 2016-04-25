@@ -22,7 +22,7 @@
 
 /* Main Page Header */
 
-.header {
+.main-page-header {
   background-attachment: fixed;
   margin-top: -1.2em;
   background-image: url('../css/skier.jpg');
@@ -80,19 +80,36 @@ display: inline-block;
 
 /*** Mtn Conditions Page ***/
 
+.weather-page-header {
+  background-attachment: fixed;
+  margin-top: -1.2em;
+  background-image: url('../css/treetops.jpg');
+  background-size: cover;
+  height: 300px;
+}
+
 .mtn-name {
   font-size: 50px;
   text-align: center;
-  margin: 10% 0px 0px 0px;
+  margin: 0px;
+  text-align: center;
+  background-color: darkblue;
+  color: white;
 }
 
 .mtn-location {
   text-align: center;
   margin: -2px 0px 10px 0px;
+  padding-bottom: 10px;
+  color: white;
+  background-color: darkblue;
 }
 
 .google-stats {
   text-align: center;
+  background-color: blue;
+  margin-top: -10px;
+  color: white;
 }
 
 .conditions {
