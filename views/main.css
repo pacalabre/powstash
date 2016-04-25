@@ -3,7 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Monofett);
 
 .header {
-  margin-top: -2em;
+  margin-top: -1.2em;
   background-image: url('../css/skier.jpg');
   background-size: cover;
   height: 300px;
@@ -17,7 +17,13 @@
   padding: 1em;
 }
 
-form {
+.nav-logo {
+  color: blue;
+  font-family: Monofett;
+  font-size: 30px;
+}
+
+.main-search {
 margin: 0% 0% 30% 30%;
 display: inline-block;
 }
@@ -31,17 +37,20 @@ display: inline-block;
 
 .button {
   width: 170px;
+  height: 35px;
   text-decoration: none;
-  background-color: transparent;
+  background-color: #272727;
   text-align: center;
   margin-top: 5px;
+  color: white;
+  border-style: none;
 }
 
 .tagline {
   text-align: center;
-  margin-top: 2em;
+  margin-top: 1em;
   font-family: Roboto Condensed;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 .desc-text {
