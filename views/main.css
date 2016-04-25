@@ -1,6 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Megrim);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
 @import url(https://fonts.googleapis.com/css?family=Monofett);
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+@import url(https://fonts.googleapis.com/css?family=Flavors);
+@import url(https://fonts.googleapis.com/css?family=Londrina+Shadow);
+@import url(https://fonts.googleapis.com/css?family=Montserrat+Subrayada);
+
+
 
 .header {
   margin-top: -1.2em;
@@ -11,20 +17,24 @@
 
 .logo {
   color: blue;
-  font-family: Monofett;
+  font-family: bangers ;
   font-size: 60px;
   text-align: center;
-  padding: 1em;
+}
+
+.stash {
+  font-family: Londrina Shadow;
+  padding:2px;
 }
 
 .nav-logo {
   color: blue;
-  font-family: Monofett;
+  font-family: bangers;
   font-size: 30px;
 }
 
 .main-search {
-margin: 0% 0% 30% 30%;
+margin: 25% 0% 30% 30%;
 display: inline-block;
 }
 
