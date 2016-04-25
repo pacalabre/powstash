@@ -2,11 +2,15 @@ var express= require('express'),
 app = express();
 var bodyParser = require('body-parser')
 var request = require('request');
+var mongoose = require('mongoose');
 app.use(express.static(__dirname + '/views'));
 
 app.set('view engine', 'ejs');
 
 app.use( bodyParser.urlencoded({extended: false }) );
+
+//still need to connect this to the database
+mongoose.connect('mongodb://localhost/');
 
 quotes = [
 "If you French Fry when you supposed to Pizza, you're gonna have a bad time -South Park",
