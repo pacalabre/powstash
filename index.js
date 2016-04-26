@@ -31,6 +31,10 @@ app.get('/signup', function(req, res) {
   res.render('signup.ejs');
 });
 
+app.post("/signup", function(req, res) {
+ console.log(req.body);
+});
+
 app.get('/weather', function(req, res) {
 var query = req.query.q;
 var url = 'http://api.openweathermap.org/data/2.5/weather?q=';
