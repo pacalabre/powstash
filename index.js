@@ -58,12 +58,14 @@ app.get("/login", function(req, res) {
 app.get('/weather', function(req, res) {
 var query = req.query.q;
 var url = 'http://api.openweathermap.org/data/2.5/weather?q=';
-var key = '&APPID=8057a36377e08e0ab0adb6578fabe5f2';
-console.log(query);
+var parameters = '&units=imperial&';
+var key = "APPID=" + process.env.OPEN_WEATHER_KEY;
 
-  // res.render('weather');
+console.log(key);
 
-  request(url+query+key, function(err, response, body) {
+
+
+  request(url+query+parameters+key, function(err, response, body) {
     var data = JSON.parse(body);
     console.log(data);
     if(!err && response.statusCode === 200 && data) {
