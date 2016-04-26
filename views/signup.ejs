@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Pow Stash</title>
-    <link rel="stylesheet" type="text/css" href="../css/css-reset.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
-  </head>
-  <body class="container-fluid signup-background">
-  <% include partials/nav.ejs %>
-  <header class="signup-header">
-  </header>
-  <section class="signup-section">
-    <h1>Sign up</h1>
-    <form method="POST" action="/signup">
-      <input type="text" name="username" placeholder="Username">
-      <input type="password" name="password" placeholder="Password">
-      <button type="submit">Sign Up</button>
-    </form>
-  </section>
+<% include partials/header.ejs %>
+<% include partials/nav.ejs %>
+<h1 class="logo container-fluid">sign!<span class="stash">up<span></h1>
+<header class= "main-page-header row">
+  <form class ="signup-form" method="POST" action="/signup">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <button type="submit">Sign Up</button>
+  </form>
+</header>
+
 <% include partials/footer.ejs %>

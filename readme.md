@@ -4,7 +4,7 @@ Write Models --done
 Add Mongo --done
 Create Databases (Users, saved resorts)    --created Users, need to create saved resorts
 Create and attach Sign Up button to database --done
-Create and attach Sign In page
+Create and attach Log In page
 Create and Style sign up page --created, not styled
 If signed in, you see menu, if not you see sign up / login
 Add ability to add resorts to My Resorts

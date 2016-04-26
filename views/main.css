@@ -38,8 +38,8 @@
   font-size: 60px;
   text-align: center;
   background-color: darkblue;
-  margin: 0px;
-  padding: 0px 0px;
+  margin: 20px 0px;
+  padding: 5px 0px;
 }
 
 .stash {
@@ -76,6 +76,12 @@ display: inline-block;
   margin-top: 1em;
   font-family: Roboto Condensed;
   font-size: 30px;
+}
+
+/*** Sign Up ***/
+
+.signup-form {
+  margin: 15% 30%;
 }
 
 /*** Mtn Conditions Page ***/
@@ -126,12 +132,6 @@ display: inline-block;
   background-size: cover;
   height: 300px;
 }
-
-/*.signup-header {
-  background-image: url('../css/lifts.jpg');
-  background-size: cover;
-  height: 20%;
-}*/
 
 .signup-background {
   background-image: url('../css/lifts.jpg');

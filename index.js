@@ -9,12 +9,6 @@ var User = require('./models/users');
 
 app.use(express.static(__dirname + '/views'));
 
-// use bcrypt
-// bcrypt.hash("myPassword", 10, function(err, hash) {
-//   hash = "salty"
-// });
-
-//use session
 app.use(session({
   secret: 'shredding gnar',
   resave: false,
@@ -89,6 +83,3 @@ app.get('/myresorts', function(req, res){
 app.listen(3000, function(){
 });
 
-
-//JSON.stringify(variable)
-// [object:]
