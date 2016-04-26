@@ -3,10 +3,23 @@ app = express();
 var bodyParser = require('body-parser')
 var request = require('request');
 var mongoose = require('mongoose');
-
+var session = require('express-session');
 var User = require('./models/users');
 
+
 app.use(express.static(__dirname + '/views'));
+
+// use bcrypt
+// bcrypt.hash("myPassword", 10, function(err, hash) {
+//   hash = "salty"
+// });
+
+//use session
+app.use(session({
+  secret: 'shredding gnar',
+  resave: false,
+  saveUninitialized: true
+}));
 
 app.set('view engine', 'ejs');
 
@@ -32,7 +45,14 @@ app.get('/signup', function(req, res) {
 });
 
 app.post("/signup", function(req, res) {
- console.log(req.body);
+ User.create(req.body, function(err,user) {
+  if(err) return res.status(500).send(err);
+  if(user) {
+    console.log("user created");
+    user.save();
+    res.redirect("/");
+  }
+ })
 });
 
 app.get('/weather', function(req, res) {
