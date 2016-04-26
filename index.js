@@ -3,14 +3,17 @@ app = express();
 var bodyParser = require('body-parser')
 var request = require('request');
 var mongoose = require('mongoose');
+
+var User = require('./models/users');
+
 app.use(express.static(__dirname + '/views'));
 
 app.set('view engine', 'ejs');
 
 app.use( bodyParser.urlencoded({extended: false }) );
 
-//still need to connect this to the database
-mongoose.connect('mongodb://localhost/');
+
+mongoose.connect('mongodb://localhost/powStash');
 
 quotes = [
 "If you French Fry when you supposed to Pizza, you're gonna have a bad time -South Park",
@@ -23,9 +26,9 @@ app.get('/', function(req, res) {
   res.render('index.ejs');
 });
 
-app.get('/about', function(req, res) {
+app.get('/signup', function(req, res) {
   // use sendFile to render the index page
-  res.render('about.ejs');
+  res.render('signup.ejs');
 });
 
 app.get('/weather', function(req, res) {

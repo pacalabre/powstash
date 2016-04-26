@@ -6,6 +6,7 @@ Create Databases (Users, saved resorts)
 Create and attach Sign Up button to database
 Create and attach Sign In
 Create and Style sign up page
+If signed in, you see menu, if not you see sign up / login
 Add ability to add resorts to My Resorts
 Add ability to remove resorts from my resports
 Add in new API
