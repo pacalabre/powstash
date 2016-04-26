@@ -46,7 +46,9 @@ app.get('/signup', function(req, res) {
 
 app.post("/signup", function(req, res) {
  User.create(req.body, function(err,user) {
-  if(err) return res.status(500).send(err);
+  if(err) {
+    return res.status(500).send(err);
+  }
   if(user) {
     console.log("user created");
     user.save();
@@ -54,6 +56,10 @@ app.post("/signup", function(req, res) {
   }
  })
 });
+
+app.get("/login", function(req, res) {
+  res.render('login.ejs');
+})
 
 app.get('/weather', function(req, res) {
 var query = req.query.q;

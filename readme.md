@@ -1,14 +1,14 @@
 To Do:
-git ignore done
-Write Models
-Add Mongo
-Create Databases (Users, saved resorts)
-Create and attach Sign Up button to database
-Create and attach Sign In
-Create and Style sign up page
+git ignore --done
+Write Models --done
+Add Mongo --done
+Create Databases (Users, saved resorts)    --created Users, need to create saved resorts
+Create and attach Sign Up button to database --done
+Create and attach Sign In page
+Create and Style sign up page --created, not styled
 If signed in, you see menu, if not you see sign up / login
 Add ability to add resorts to My Resorts
-Add ability to remove resorts from my resports
+Add ability to remove resorts from my resorts
 Add in new API
 Hash the new API (dont add to github)
 Add to Heroku

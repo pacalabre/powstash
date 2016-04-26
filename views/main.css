@@ -127,6 +127,24 @@ display: inline-block;
   height: 300px;
 }
 
+/*.signup-header {
+  background-image: url('../css/lifts.jpg');
+  background-size: cover;
+  height: 20%;
+}*/
+
+.signup-background {
+  background-image: url('../css/lifts.jpg');
+  background-position: fixed;
+}
+
+.signup-section {
+  background-color: white;
+  text-align: center;
+  margin: 0px 20%;
+  padding: 20px;
+}
+
 /* Reusable */
 .desc-text {
   font-family: Roboto Condensed;
