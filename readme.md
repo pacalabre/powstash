@@ -2,10 +2,12 @@ To Do:
 git ignore --done
 Write Models --done
 Add Mongo --done
-Create Databases (Users, saved resorts)    --created Users, need to create saved resorts
+Create Databases (Users, saved resorts)    --done
 Create and attach Sign Up button to database --done
 Create and attach Log In page
-Create and Style sign up page --created, not styled
+Create and Style sign up page -- done
+
+
 If signed in, you see menu, if not you see sign up / login
 Add ability to add resorts to My Resorts
 Add ability to remove resorts from my resorts
@@ -36,11 +38,12 @@ id: integer
 resorts: [
   {
     mtn name: "Mount Baker",
-    mtn base:"200 inches",
-    last 24 hrs: "2-3 inches",
-    last 48 hrs: "4-6 inches",
-    next 24 hrs: "1-2 inches",
-    next 48 hrs: "3-4 inches"
+    current temp: "integer"
+    temp high: "integer",
+    temp low: "integer",
+    Icon: "url",
+    Weather Desc: "string",
+    total snow: float
   }
 ]
 

@@ -3,10 +3,12 @@ var bcrypt = require('bcrypt');
 
 var userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
-  password: { type: String,required: true, }
+  password: { type: String,required: true, },
+  savedResorts: {type: Array}
 });
 
 var User = mongoose.model('User', userSchema);
+//hooks
 userSchema.pre('save', function(next) {
   var user = this;
     if(user.password) {

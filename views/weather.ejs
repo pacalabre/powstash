@@ -3,18 +3,17 @@
 <header class="weather-page-header">
   <% include partials/search.ejs %>
 </header>
-<h2 class="mtn-name">Mount Baker</h2>
-<h3 class="mtn-location">Bellingham, WA</h3>
+<h2 class="mtn-name"> <%=q%> </h2>
+<h3 class="mtn-location"> <%= conditions.name%></h3>
 <ul class="google-stats">
   <li>Distance: 1 hr 23 mins</li>
   <li>Traffic: Moderate</li>
 </ul>
 <ul class="conditions">
+  <li></li>
   <li>Weather: <%= conditions.weather[0].main %></li>
-  <li>Base:</li>
-  <li>Last 24:</li>
-  <li>Last 48:</li>
-  <li>Next 24:</li>
-  <li>Next 48:</li>
+  <li>Current Temp: <%= conditions.main.temp %></li>
+  <li>High Temp: <%=conditions.main.temp_max %></li>
+  <li>Low Temp: <%=conditions.main.temp_min %></li>
 </ul>
 <% include partials/footer.ejs %>
