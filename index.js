@@ -82,13 +82,30 @@ app.get('/weather', function(req, res) {
   var parametersWeather = '&units=imperial&';
   var keyWeather = "APPID=" + process.env.OPEN_WEATHER_KEY;
 
-  request(urlWeather+query+parametersWeather+keyWeather, function(err, response, body) {
-    var data = JSON.parse(body);
+  // request(urlWeather+query+parametersWeather+keyWeather, function(err, response, body) {
+  //   var data = JSON.parse(body);
+  //   // console.log(data);
+  //   if(!err && response.statusCode === 200 && data) {
+  //     res.render('weather',{conditions:data,q:query})
+  //   } else {
+  //     res.render('error');
+  //   }
+  // })
+
+  //World Weather Api
+  var urlWorld = 'http://api.worldweatheronline.com/premium/v1/ski.ashx?';
+  var keyWorld ="key="+process.env.WORLD_WEATHER_KEY;
+  var queryWorld = '&q='+query;
+  var endWorld = '&includeLocation=yes&format=json';
+  request(urlWorld+keyWorld+queryWorld+endWorld, function(err,response,body) {
+    var data=JSON.parse(body);
+    console.log(urlWorld+keyWorld+queryWorld+endWorld);
     console.log(data);
-    if(!err && response.statusCode === 200 && data) {
+    if(!err && response.statusCode === 200 && data){
       res.render('weather',{conditions:data,q:query})
     } else {
-      res.render('error');
+      console.log(err);
+      res.render("error");
     }
   })
 })

@@ -19,6 +19,8 @@ Add to Heroku
 Stretch goals/add ons:
 flickr API
 Add in google maps API - distance
+yelp
+find closest resort
 trail map API
 Add tags
 

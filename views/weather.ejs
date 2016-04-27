@@ -3,7 +3,7 @@
 <header class="weather-page-header">
   <% include partials/search.ejs %>
 </header>
-<h2 class="mtn-name"> <%=q%> </h2>
+<h2 class="mtn-name"> <%= conditions.data.nearest_area[0].areaName[0].value%> </h2>
 <h3 class="mtn-location"> <%= conditions.name%></h3>
 <ul class="google-stats">
   <li>Distance: 1 hr 23 mins</li>
@@ -11,9 +11,6 @@
 </ul>
 <ul class="conditions">
   <li></li>
-  <li>Weather: <%= conditions.weather[0].main %></li>
-  <li>Current Temp: <%= conditions.main.temp %></li>
-  <li>High Temp: <%=conditions.main.temp_max %></li>
-  <li>Low Temp: <%=conditions.main.temp_min %></li>
+
 </ul>
 <% include partials/footer.ejs %>
