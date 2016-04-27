@@ -65,7 +65,7 @@ app.post("/login", function(req, res) {
       console.log(match);
       if(!err && match) {
         req.session.user = user;
-        res.redirect("/");
+        res.redirect("/myresorts");
       }
       else {
         res.redirect("/login");
