@@ -17,9 +17,9 @@ Add to Heroku
 
 
 Stretch goals/add ons:
-instagram API
+flickr API
+Add in google maps API - distance
 trail map API
-Add in google maps API
 Add tags
 
 models :

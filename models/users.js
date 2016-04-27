@@ -7,23 +7,36 @@ var userSchema = new mongoose.Schema({
   savedResorts: {type: Array}
 });
 
-var User = mongoose.model('User', userSchema);
+
 //hooks
 userSchema.pre('save', function(next) {
   var user = this;
-    if(user.password) {
-        bcrypt.genSalt(10, function(err, salt) {
-        if (err) return next(err);
-        bcrypt.hash(user.password, salt, function(err,hash){
-          user.password = hash;
-          next();
-        })
-      });
-    } else {
-      callback(null, user);
+    if(!user.isModified('password')){
+      return next();
     }
-    return user;
-  // }
-});
+    bcrypt.genSalt(10, function(err, salt){
+      if(err){
+        return next(err);
+      }
+      bcrypt.hash(user.password, salt, function(err,hash){
+        if(err){
+          return next(err);
+        }
+        user.password = hash;
+        next();
+      });
+    });
+  });
+
+userSchema.methods.comparePassword = function(password,callback) {
+  bcrypt.compare(password, this.password, function(err, isMatch) {
+    if(err) {
+      return callback(err);
+    }
+    callback(null, isMatch);
+  })
+}
+
+var User = mongoose.model('User', userSchema);
 // make this available to our other files
 module.exports = User;

@@ -55,17 +55,34 @@ app.get("/login", function(req, res) {
   res.render('login.ejs');
 })
 
+//Find correct mongo syntax
+app.post("/login", function(req, res) {
+  var user = req.body.username;
+  var pass = req.body.password;
+  User.findOne({username:user}, function(err, user) {
+    console.log(JSON.stringify(user));
+    user.comparePassword(pass,function(err,match){
+      console.log(match);
+      if(!err && match) {
+        req.session.user = user;
+        res.redirect("/");
+      }
+      else {
+        res.redirect("/login");
+      }
+    })
+
+  })
+})
+
 app.get('/weather', function(req, res) {
-var query = req.query.q;
-var url = 'http://api.openweathermap.org/data/2.5/weather?q=';
-var parameters = '&units=imperial&';
-var key = "APPID=" + process.env.OPEN_WEATHER_KEY;
+  var query = req.query.q;
+  //Open Weather API
+  var urlWeather = 'http://api.openweathermap.org/data/2.5/weather?q=';
+  var parametersWeather = '&units=imperial&';
+  var keyWeather = "APPID=" + process.env.OPEN_WEATHER_KEY;
 
-console.log(key);
-
-
-
-  request(url+query+parameters+key, function(err, response, body) {
+  request(urlWeather+query+parametersWeather+keyWeather, function(err, response, body) {
     var data = JSON.parse(body);
     console.log(data);
     if(!err && response.statusCode === 200 && data) {
