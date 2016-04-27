@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 
 var reportSchema = new mongoose.Schema({
   name: { type: String },
-  location: {type: String}
+  latitude: {type: String},
+  longitude:{type: String}
 
   // currentTemp: { type: String },
   // tempHigh: { type: Number },

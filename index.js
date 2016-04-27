@@ -116,6 +116,12 @@ app.post('/weather', function(req, res) {
 // something like this in Mongo
 // db.favorite.create({omdbid:movieId, title:movieTitle,year:movieYear}).then (function(movie,err){
 //   res.redirect('/favorites');
+  db.weatherReports.save(){
+    name:
+    lat:
+    long:
+
+  }
   res.send({error: false, data: []});
 })
 

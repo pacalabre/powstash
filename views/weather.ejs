@@ -3,13 +3,17 @@
 <header class="weather-page-header">
   <% include partials/search.ejs %>
 </header>
-<h2 class="mtn-name" > <%= conditions.data.nearest_area[0].areaName[0].value%> </h2>
-<h3 class="mtn-location" name="mtnLocation" value="<%= conditions.name%>"> <%= conditions.name%></h3>
+<h2 class="mtn-name"> <%= conditions.data.nearest_area[0].areaName[0].value%> </h2>
+<h3 class="mtn-location" id="latitude" name="mtnLocation" value="<%= conditions.data.nearest_area[0].latitude %>"> <%= conditions.name%></h3>
 <ul class="google-stats">
-  <li>Distance: 1 hr 23 mins</li>
-  <li>Traffic: Moderate</li>
+  <li> <%= conditions.data.nearest_area[0].distance_miles %> from <%= conditions.data.request[0].query%></li>
 </ul>
-<a href="#" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus-sign"></span> Add to My Resorts</a>
+
+<form id="addFav" class="btn btn-default btn-xs">
+  <input type="hidden" id="mtnName" value="<%= conditions.data.nearest_area[0].areaName[0].value %>">
+  <input type="hidden" id="latitude" value="<%= conditions.data.nearest_area[0].latitude %>" >
+  <input type="hidden" id="longitude" value="<%= conditions.data.nearest_area[0].longitude %>" >
+<span class="glyphicon glyphicon-plus-sign"></span> Add to My Resorts</form>
 <ul class="conditions">
   <li>Weather: <%= conditions.data.weather[0].hourly[0].bottom[0].weatherDesc[0].value %></li>
   <li>Current Temp: <%= conditions.data.weather[0].hourly[0].bottom[0].tempF %> </li>
