@@ -6,8 +6,7 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 var User = require('./models/users');
 
-
-app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/static'));
 
 app.use(session({
   secret: 'shredding gnar',
@@ -110,10 +109,23 @@ app.get('/weather', function(req, res) {
   })
 })
 
-app.get('/myresorts', function(req, res){
+app.post('/weather', function(req, res) {
+  var mtnName = req.body.mtnName;
+  var mtnLocation = req.body.mtnLocation;
+  // var mtnId = req.body.
+// something like this in Mongo
+// db.favorite.create({omdbid:movieId, title:movieTitle,year:movieYear}).then (function(movie,err){
+//   res.redirect('/favorites');
+  res.send({error: false, data: []});
+})
+
+
+app.get('/myresorts', function(req, res) {
   // use sendFile to render the index page
   res.render('myresorts.ejs');
 });
+
+
 
 
 app.listen(3000, function(){

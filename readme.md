@@ -1,27 +1,33 @@
+
 To Do:
 git ignore --done
 Write Models --done
 Add Mongo --done
-Create Databases (Users, saved resorts)    --done
+Create Databases (Users, saved resorts) --done
 Create and attach Sign Up button to database --done
-Create and attach Log In page
+Create and attach Log In page -done
 Create and Style sign up page -- done
 
 
-If signed in, you see menu, if not you see sign up / login
+Add in new API's:
+  - yelp
+  - geolocation
+
 Add ability to add resorts to My Resorts
 Add ability to remove resorts from my resorts
-Add in new API
-Hash the new API (dont add to github)
+
+If signed in, you see menu, if not you see sign up / login
+
 Add to Heroku
 
-
 Stretch goals/add ons:
-flickr API
 Add in google maps API - distance
-yelp
+
+
+
+flickr API
 find closest resort
-trail map API
+
 Add tags
 
 models :

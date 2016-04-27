@@ -2,12 +2,14 @@ var mongoose = require('mongoose');
 
 var reportSchema = new mongoose.Schema({
   name: { type: String },
-  currentTemp: { type: String },
-  tempHigh: { type: Number },
-  tempLow: { type: Number },
-  icon: { type: String },
-  weatherDesc:{ type: String},
-  totalSnow: { type: String}
+  location: {type: String}
+
+  // currentTemp: { type: String },
+  // tempHigh: { type: Number },
+  // tempLow: { type: Number },
+  // icon: { type: String },
+  // weatherDesc:{ type: String},
+  // totalSnow: { type: String}
 });
 
 var Report = mongoose.model('Report', userSchema);
