@@ -10,7 +10,9 @@
   <li>Traffic: Moderate</li>
 </ul>
 <ul class="conditions">
-  <li></li>
-
+  <li>Weather: <%= conditions.data.weather[0].hourly[0].bottom[0].weatherDesc[0].value %></li>
+  <li>Current Temp: <%= conditions.data.weather[0].hourly[0].bottom[0].tempF %> </li>
+  <li>High Temp: <%= conditions.data.weather[0].bottom[0].maxtempF %> </li>
+  <li>Low Temp: <%= conditions.data.weather[0].bottom[0].mintempF %> </li>
 </ul>
 <% include partials/footer.ejs %>
