@@ -5,6 +5,7 @@ var request = require('request');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var User = require('./models/users');
+var Report = require('./models/weatherReports');
 
 app.use(express.static(__dirname + '/static'));
 
@@ -98,8 +99,8 @@ app.get('/weather', function(req, res) {
   var endWorld = '&includeLocation=yes&format=json';
   request(urlWorld+keyWorld+queryWorld+endWorld, function(err,response,body) {
     var data=JSON.parse(body);
-    console.log(urlWorld+keyWorld+queryWorld+endWorld);
-    console.log(data);
+    // console.log(urlWorld+keyWorld+queryWorld+endWorld);
+    // console.log(data);
     if(!err && response.statusCode === 200 && data){
       res.render('weather',{conditions:data,q:query})
     } else {
@@ -110,19 +111,23 @@ app.get('/weather', function(req, res) {
 })
 
 app.post('/weather', function(req, res) {
-  var mtnName = req.body.mtnName;
-  var mtnLocation = req.body.mtnLocation;
+    console.log("hi");
+  var mtnName = req.body.mountainName;
+  var mtnLat = req.body.mountainLat;
+  var mtnLon = req.body.mountainLon;
+
   // var mtnId = req.body.
 // something like this in Mongo
 // db.favorite.create({omdbid:movieId, title:movieTitle,year:movieYear}).then (function(movie,err){
 //   res.redirect('/favorites');
-  db.weatherReports.save(){
-    name:
-    lat:
-    long:
+  Report.save( {
+    name: mtnName ,
+    lat: mtnLat ,
+    lon: mtnLon
+  }, function(err,mtn){
+    console.log(mtn);
+  });
 
-  }
-  res.send({error: false, data: []});
 })
 
 

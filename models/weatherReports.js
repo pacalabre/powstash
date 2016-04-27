@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 
 var reportSchema = new mongoose.Schema({
   name: { type: String },
-  latitude: {type: String},
-  longitude:{type: String}
+  latitude: { type: String},
+  longitude:{ type: String}
 
   // currentTemp: { type: String },
   // tempHigh: { type: Number },
@@ -13,7 +13,7 @@ var reportSchema = new mongoose.Schema({
   // totalSnow: { type: String}
 });
 
-var Report = mongoose.model('Report', userSchema);
+var Report = mongoose.model('Report', reportSchema);
 
 
 

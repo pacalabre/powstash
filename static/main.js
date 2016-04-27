@@ -1,20 +1,27 @@
 console.log("this is working");
 
 $('#addFav').click(function() {
-  var mtnName = document.getElementById("mtnName");
-  var mtnLat = document.getElementById("latitude");
-  var mtnLong = document.getElementById("longitude");
-  console.log(mtnName);
-  console.log(mtnLat);
-  console.log(mtnLong);
-    $.ajax({
-      method: 'POST',
-      name: mtnName ,
-      latitude: mtnLat ,
-      longitude: mtnLong
-    }).done (function(){
-      console.log("done");
-    })
+  console.log("clicked")
+
+  var mountainName = document.getElementById("mtnName").value;
+  var mountainLat = document.getElementById("latitude").value;
+  var mountainLong = document.getElementById("longitude").value;
+
+  $.ajax({
+    url: '/weather',
+    method: 'POST',
+    data: {
+      name: mountainName,
+      latitude: mountainLat ,
+      longitude: mountainLong
+    }
+  }).done(function(){
+    console.log("done");
+  }).fail(function(err) {
+    console.log("err", err);
+  }).always(function() {
+    console.log("really done");
+  })
 })
 
 
