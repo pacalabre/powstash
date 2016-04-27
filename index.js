@@ -112,20 +112,20 @@ app.get('/weather', function(req, res) {
 
 app.post('/weather', function(req, res) {
     console.log("hi");
-  var mtnName = req.body.mountainName;
-  var mtnLat = req.body.mountainLat;
-  var mtnLon = req.body.mountainLon;
+  var mtnName = req.body.name;
+  var mtnLat = req.body.latitude;
+  var mtnLon = req.body.longitude;
 
   // var mtnId = req.body.
 // something like this in Mongo
 // db.favorite.create({omdbid:movieId, title:movieTitle,year:movieYear}).then (function(movie,err){
 //   res.redirect('/favorites');
-  Report.save( {
+  Report.create( {
     name: mtnName ,
     lat: mtnLat ,
     lon: mtnLon
   }, function(err,mtn){
-    console.log(mtn);
+    res.json(mtn);
   });
 
 })
