@@ -149,12 +149,19 @@ app.post('/weather', function(req, res) {
 
 
 app.get('/myresorts', function(req, res) {
-  // use sendFile to render the index page
-  res.render('myresorts.ejs');
-  User.findOne()
+  //This doesn't work - make it work!
+
+  User.findOne({username:req.session.user.username})
+  .populate('reports')
+  .exec(err, report);
+  console.log("heyo!");
+
   // Report.find
   //mongoose populate
   //user.findOne.populate
+
+  // use sendFile to render the index page
+  res.render('myresorts.ejs');
 });
 
 
