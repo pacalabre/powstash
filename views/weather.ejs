@@ -6,7 +6,7 @@
 <h2 class="mtn-name"> <%= conditions.data.nearest_area[0].areaName[0].value%> </h2>
 <h3 class="mtn-location" id="latitude" name="mtnLocation" value="<%= conditions.data.nearest_area[0].latitude %>"> <%= conditions.name%></h3>
 <ul class="google-stats">
-  <li> <%= conditions.data.nearest_area[0].distance_miles %> from <%= conditions.data.request[0].query%></li>
+  <li> <%= conditions.data.nearest_area[0].distance_miles %> miles from <%= conditions.data.request[0].query%></li>
 </ul>
 
 <form id="addFav" class="btn btn-default btn-xs">

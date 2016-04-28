@@ -125,8 +125,25 @@ app.post('/weather', function(req, res) {
     lat: mtnLat ,
     lon: mtnLon
   }, function(err,mtn){
-    res.json(mtn);
+    // res.json(mtn);
+
+
+
+    User.findOne({username:req.session.user.username},function(err,user){
+      console.log(err);
+      console.log(user);
+      // user.savedResorts=[];
+      user.savedResorts.push(mtn);
+      user.save();
+      res.json(mtn);
+    })
   });
+
+  //find current user
+  //save resort to savedResorts
+  // User.save({
+  //   savedResorts: mtnName
+  // })
 
 })
 
@@ -134,6 +151,10 @@ app.post('/weather', function(req, res) {
 app.get('/myresorts', function(req, res) {
   // use sendFile to render the index page
   res.render('myresorts.ejs');
+  User.findOne()
+  // Report.find
+  //mongoose populate
+  //user.findOne.populate
 });
 
 
