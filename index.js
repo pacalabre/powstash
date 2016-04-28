@@ -1,6 +1,6 @@
 var express= require('express'),
 app = express();
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 var request = require('request');
 var mongoose = require('mongoose');
 var session = require('express-session');
@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 
 app.use( bodyParser.urlencoded({extended: false }) );
 
-
+mongoose.connect('mongodb://localhost/powStash');
 mongoose.connect(process.env.MONGODB_URI);
 
 
@@ -72,7 +72,6 @@ app.post("/login", function(req, res) {
         res.redirect("/login");
       }
     })
-
   })
 })
 
@@ -151,10 +150,10 @@ app.post('/weather', function(req, res) {
 
 app.get('/myresorts', function(req, res) {
   //This doesn't work - make it work!
-  User.findOne({username:req.session.user.username})
-  .populate('reports')
-  .exec(err, report);
-  console.log("heyo!");
+  // User.findOne({username:req.session.user.username})
+  // .populate('reports')
+  // .exec(err, report);
+  // console.log("heyo!");
 
   // Report.find
   //mongoose populate
