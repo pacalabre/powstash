@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 app.use( bodyParser.urlencoded({extended: false }) );
 
 
-mongoose.connect('mongodb://localhost/powStash');
+mongoose.connect(process.env.USE_MONGOLAB);
 
 quotes = [
 "If you French Fry when you supposed to Pizza, you're gonna have a bad time -South Park",
