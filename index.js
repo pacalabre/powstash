@@ -19,8 +19,12 @@ app.set('view engine', 'ejs');
 
 app.use( bodyParser.urlencoded({extended: false }) );
 
+if (process.env.PORT) {
+  mongoose.connect(process.env.PROD_USE_MONGOLAB);
+} else {
+  mongoose.connect(process.env.DEV_USE_MONGOLAB);
+}
 
-mongoose.connect(process.env.USE_MONGOLAB);
 
 quotes = [
 "If you French Fry when you supposed to Pizza, you're gonna have a bad time -South Park",
