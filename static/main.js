@@ -1,11 +1,11 @@
 console.log("this is working");
 
-$('#addFav').click(function() {
+$('.favButton').click(function() {
   console.log("clicked")
-
-  var mountainName = document.getElementById("mtnName").value;
-  var mountainLat = document.getElementById("latitude").value;
-  var mountainLong = document.getElementById("longitude").value;
+  var that = this;
+  var mountainName = $(that).parent().find("h2").text();
+  var mountainLat = $(that).parent().find("h2").attr("data-latitude");
+  var mountainLong = $(that).parent().find("h2").attr("data-longitude");
 
   $.ajax({
     url: '/weather',
@@ -14,13 +14,14 @@ $('#addFav').click(function() {
       name: mountainName,
       latitude: mountainLat ,
       longitude: mountainLong
+    },
+    success: function(data){
+      $(that).text("Saved");
+    },
+    error: function(){
+
     }
-  }).done(function(){
-    console.log("done");
-  }).fail(function(err) {
-    console.log("err", err);
-  }).always(function() {
-    console.log("really done");
+
   })
 })
 

@@ -60,13 +60,13 @@ app.post("/login", function(req, res) {
   var user = req.body.username;
   var pass = req.body.password;
   User.findOne({username:user}, function(err, user) {
-    console.log(JSON.stringify(user));
+    //console.log(JSON.stringify(user));
     if(err) {
       res.send(err);
     }
     if(user) {
       user.comparePassword(pass,function(err,match){
-        console.log(match);
+        //console.log(match);
 
         if(!err && match) {
           req.session.user = user;
@@ -116,55 +116,23 @@ app.get('/weather', function(req, res) {
 })
 
 app.post('/weather', function(req, res) {
-    console.log("hi");
-  var mtnName = req.body.name;
-  var mtnLat = req.body.latitude;
-  var mtnLon = req.body.longitude;
-
-// something like this in Mongo
-// db.favorite.create({omdbid:movieId, title:movieTitle,year:movieYear}).then (function(movie,err){
-//   res.redirect('/favorites');
-  Report.create( {
-    name: mtnName ,
-    lat: mtnLat ,
-    lon: mtnLon
-  }, function(err,mtn){
-    // res.json(mtn);
-
-
-
-    User.findOne({username:req.session.user.username},function(err,user){
-      console.log(err);
-      console.log(user);
-      // user.savedResorts=[];
-      user.savedResorts.push(mtn);
-      user.save();
-      res.json(mtn);
-    })
+  Report.create(req.body, function(err, report) {
+    User.update({_id: req.session.user._id}, {$push: {savedResorts: report._id}}, function(err, user) {
+      res.status(200).send('Added Resort');
+    });
   });
-
-  //find current user
-  //save resort to savedResorts
-  // User.save({
-  //   savedResorts: mtnName
-  // })
-
-})
+});
 
 
 app.get('/myresorts', function(req, res) {
-  //This doesn't work - make it work!
-  // console.log(req.session);
-  // if(req.session.user) {
-  //   User.findOne({username:req.session.user.username}, 'savedResorts', function(err,resorts){
-  //     Report.find({'_id':{$in:resorts}}).all(function(err, mtnresorts){
-  //       console.log("mtn"+mtnresorts);
-  //       res.render("myresorts",{resorts:mtnresorts});
-  //       });
-  //     })
-  // }
-  res.render('myresorts');
-})
+  if(req.session.user) {
+    User.findOne({username:req.session.user.username}, 'savedResorts', function(err,user){
+      Report.find({'_id':{$in: user.savedResorts}}, function(err, mtnresorts){
+        res.render("myresorts",{resorts:mtnresorts});
+      });
+    });
+  }
+});
 
 
 
