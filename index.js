@@ -121,7 +121,6 @@ app.post('/weather', function(req, res) {
   var mtnLat = req.body.latitude;
   var mtnLon = req.body.longitude;
 
-  // var mtnId = req.body.
 // something like this in Mongo
 // db.favorite.create({omdbid:movieId, title:movieTitle,year:movieYear}).then (function(movie,err){
 //   res.redirect('/favorites');
@@ -158,56 +157,12 @@ app.get('/myresorts', function(req, res) {
   console.log(req.session);
   if(req.session.user) {
     var newArr = [];
-    User.findOne({username:req.session.user.username},function(err,user){
-      console.log("hey");
+    // User.findOne({username:req.session.user.username},function(err,user){
+      Report.find({"_userResorts":{$in:[req.session.user.id]}},function(err,report){
+        console.log("this is the report "+report);
+      });
       res.render("myresorts");
-  //     console.log(user.savedResorts);
-  //     resortArr = user.savedResorts;
-  //     var tempArr = [];
-  //     if (resortArr.length > 0){
-  //       for(var i = 0; i < resortArr.length; i++){
-  //         console.log("trying to do the loops");
-  //         //loop through resorts
-  //         //grab by resortArr[i]
-  //         Report.findById(resortArr[i], function(err,report){
-  //           console.log(report.name);
-  //           if(err){
-  //             console.log("error");
-  //           }
-  //           if(report){
-  //             tempArr.push(report);
-  //             console.log("tempArr ",tempArr);
-  //             if(!resortArr[i+1]){
-  //               newArr = tempArr;
-  //               res.render("myresorts",{"resorts:newArr"});
-  //               console.log("This is the newArr after this stupid if statement",newArr)
-  //             }
-  //           }
-
-  //         })
-
-  //         //store in new arr
-  //         //pass to front end
-  //       }
-  //     } else {
-  //       res.render("myresorts");
-  //     }
-  //         console.log("This is the tempArr before user.find finishes",tempArr);
-
-  //   })
-  //   console.log("This is the newArr after user.find finishes",newArr);
-  //   // .populate('reports')
-  //   // .exec(err, report);
-  //   // console.log("heyo!");
-
-  //   // Report.find
-  //   //mongoose populate
-  //   //user.findOne.populate
-  //   // use sendFile to render the index page
-  // } else {
-  //   res.send("youre not allowed");
-  // }
-    });
+    // });
   }
 })
 

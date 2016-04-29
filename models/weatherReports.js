@@ -4,7 +4,8 @@ var reportSchema = new mongoose.Schema({
   name: { type: String },
   latitude: { type: String},
   longitude:{ type: String},
-  _userResorts :[{type:Schema.ObjectId, ref:'User'}]
+  _userResorts :[{type : mongoose.Schema.ObjectId, ref:'User'}]
+
 });
 
 var Report = mongoose.model('Report', reportSchema);
