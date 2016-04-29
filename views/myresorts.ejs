@@ -4,5 +4,7 @@
   <% include partials/search.ejs %>
 </header>
 <h2 class="mtn-name logo">My!<span class="stash">Resorts</span></h2>
-
+<% resorts.forEach(function(resort) { %>
+  <h1><%=resort.name%></h1>
+<% }) %>
 <% include partials/footer.ejs %>

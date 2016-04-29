@@ -156,12 +156,23 @@ app.get('/myresorts', function(req, res) {
   //This doesn't work - make it work!
   console.log(req.session);
   if(req.session.user) {
-    var newArr = [];
-    // User.findOne({username:req.session.user.username},function(err,user){
-      Report.find({"_userResorts":{$in:[req.session.user.id]}},function(err,report){
-        console.log("this is the report "+report);
-      });
-      res.render("myresorts");
+    User.findOne({username:req.session.user.username}, 'savedResorts', function(err,resorts){
+      Report.find({'_id':{$in:resorts}}).all(function(err, mtnresorts){
+        console.log("mtn"+mtnresorts);
+        res.render("myresorts",{resorts:mtnresorts});
+        });
+      })
+
+    // .populate('savedResorts')
+    // .exec(function(err, resort){
+    //   console.log(resort);
+    // })
+
+      // Report.find({"_userResorts":{$in:[req.session.user.id]}},function(err,report){
+      //   console.log("this is the report "+report);
+      // });
+
+
     // });
   }
 })

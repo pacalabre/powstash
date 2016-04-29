@@ -5,7 +5,7 @@ var userSchema = new mongoose.Schema({
 
   username: { type: String, required: true, unique: true },
   password: { type: String,required: true, },
-  savedResorts: [{type: mongoose.Schema.Types.ObjectId, ref:"Reports"}]
+  savedResorts: [{type: mongoose.Schema.ObjectId, ref:"Reports"}]
 });
 
 
