@@ -19,9 +19,7 @@ app.set('view engine', 'ejs');
 
 app.use( bodyParser.urlencoded({extended: false }) );
 
-mongoose.connect('mongodb://localhost/powStash');
-mongoose.connect(process.env.MONGODB_URI);
-
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/powStash');
 
 quotes = [
 "If you French Fry when you supposed to Pizza, you're gonna have a bad time -South Park",
@@ -62,16 +60,22 @@ app.post("/login", function(req, res) {
   var pass = req.body.password;
   User.findOne({username:user}, function(err, user) {
     console.log(JSON.stringify(user));
-    user.comparePassword(pass,function(err,match){
-      console.log(match);
-      if(!err && match) {
-        req.session.user = user;
-        res.redirect("/myresorts");
-      }
-      else {
-        res.redirect("/login");
-      }
-    })
+    if(err) {
+      res.send(err);
+    }
+    if(user) {
+      user.comparePassword(pass,function(err,match){
+        console.log(match);
+
+        if(!err && match) {
+          req.session.user = user;
+          res.redirect("/myresorts");
+        }
+        else {
+          res.redirect("/login");
+        }
+      })
+    }
   })
 })
 
@@ -150,7 +154,10 @@ app.post('/weather', function(req, res) {
 
 app.get('/myresorts', function(req, res) {
   //This doesn't work - make it work!
-  // User.findOne({username:req.session.user.username})
+  console.log(req.session);
+  User.findOne({username:req.session.user.username},function(err,user){
+    console.log("this happened");
+  })
   // .populate('reports')
   // .exec(err, report);
   // console.log("heyo!");
@@ -167,4 +174,7 @@ app.get('/myresorts', function(req, res) {
 
 
 app.listen(process.env.PORT || 3000);
+
+
+// MONGODB_URI=mongodb://pacalabre:powstash@ds021761.mlab.com:21761/powstash
 
