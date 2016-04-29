@@ -9,7 +9,7 @@ Add in new API's:
 Add ability to add resorts to My Resorts
 Add ability to remove resorts from my resorts
 
-If signed in, you see menu, if not you see sign up / login
+If signed in, you see menu, if not you see sign up / login!
 
 Stretch goals/add ons:
 Add in geolocation "find closest resort"
